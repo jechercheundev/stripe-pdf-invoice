@@ -13,7 +13,7 @@ module.exports = (key, config = {}) => (invoiceId, data = {}) => {
   if(!invoiceId) {
     throw new Error('missing_invoice_id');
   }
-	return stripe.invoices.retrieve(invoiceId).then((pouet) => {
+	return stripe.invoices.retrieve(invoiceId).then((invoice) => {
 		const tpld = template(Object.assign({
 	    currency_symbol: '$',
 	    label_invoice: 'invoice',
