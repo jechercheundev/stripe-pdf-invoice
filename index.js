@@ -6,7 +6,7 @@ const sizeOf = require('image-size');
 
 const template = require('./templates/default');
 
-module.exports = (invoice, config = {}, data = {}) => {
+module.exports = () => (invoice, config = {}, data = {}) => {
 	const tpld = template(Object.assign({
 		currency_symbol: '$',
 		label_invoice: 'invoice',
